@@ -1,0 +1,19 @@
+{
+    "name": "dbisso/view",
+    "description": "A basic view class for rendering arbitrary templates",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dan Bissonnet",
+            "email": "dan@danisadesigner.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "DBisso\\Util\\View\\": "src"
+        }
+    }
+}
