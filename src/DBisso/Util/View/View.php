@@ -17,6 +17,9 @@ abstract class View {
 	 */
 	public $template_name;
 
+
+	protected $template_prefix = 'templates';
+
 	// /**
 	//  * Where to find the templates
 	//  * @var string
@@ -28,6 +31,7 @@ abstract class View {
 	 * @var string
 	 */
 	// $template_file = '';
+
 
 	// *
 	//  * The method for rendering the template
@@ -87,13 +91,17 @@ abstract class View {
 			extract( $this->custom_data );
 		}
 
-		$template_path = $this->get_template_part( $this->template_name );
+		$template_path = $this->get_template_part( $this->get_template_name() );
 
 		if ( file_exists( $template_path ) ) {
 			include $template_path;
 		} else {
 			error_log(  sprintf( 'Template %s for view %s could not be found', $this->template_name, get_called_class() ) );
 		}
+	}
+
+	private function get_template_name() {
+		return $this->template_prefix . '/' . $this->template_name;
 	}
 
 	protected function get_template_part( $slug, $name = null ) {

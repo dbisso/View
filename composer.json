@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "DBisso\\Util\\View\\": "src"
+            "DBisso\\Util\\View\\": "src/"
         }
     }
 }
